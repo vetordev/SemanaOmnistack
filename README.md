@@ -4,7 +4,7 @@
 **Aircnc**
 
 ## OBJETIVOS
-- [ ] Back-end com node
+- [x] Back-end com node
 - [ ] Front-end com React
 - [ ] Front-end com React Native
 
