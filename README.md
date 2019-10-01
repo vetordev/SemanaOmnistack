@@ -14,4 +14,4 @@
 - React 
 - React Native
 
-* Curso cedido pela **Rocketseat**
+Curso cedido pela **Rocketseat**
