@@ -30,6 +30,12 @@ module.exports = {
         });
 
         return res.json(spot);
+    },
+    async destroy(req, res){
+        const {spot} = req.params;
+        await Spot.findByIdAndRemove(spot);
+        
+        return res.json({deleted : true});
     }
 
 }

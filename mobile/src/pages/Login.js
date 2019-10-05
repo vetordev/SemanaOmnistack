@@ -16,7 +16,7 @@ export default function Login({ navigation }) {
       if (user){
         navigation.navigate('List');
       }
-    });
+    }).catch(err => console.log(err));
 
   }, []);
 

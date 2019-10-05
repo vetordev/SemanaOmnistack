@@ -22,5 +22,8 @@ routes.post('/spots/:spot_id/booking', BookingController.store);
 
 routes.post('/bookings/:booking_id/approvals', ApprovalController.store);
 routes.post('/bookings/:booking_id/rejections', RejectionController.store);
+
+//Deletar spot
+routes.delete('/spots/:spot/destroy', SpotController.destroy);
 module.exports = routes;
 //exporta as rotas

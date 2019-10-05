@@ -5,7 +5,7 @@ import api from '../../services/api';
 import './style.css';
 
 export default function Dashboard() {
-
+    
     const [spots, setSpots] = useState([]);
     const [requests, setRequests] = useState([]);
 
@@ -33,18 +33,33 @@ export default function Dashboard() {
 
         }
         loadSpots();
-    }, []);
+        
+    }, [spots]);
 
     
     //array vazio => executa uma vez
 
     async function handleAccept(id){
-        await api.post(`/bookings/${id}/approvals`);
+        const user_id = localStorage.getItem('user');
+        await api.post(`/bookings/${id}/approvals`, '', {
+            headers: {
+                user_id
+            }
+        });
         setRequests(requests.filter(request => request._id !== id));
     }
     async function handleReject(id){
-        await api.post(`/bookings/${id}/rejections`);
+        const user_id = localStorage.getItem('user');
+        console.log(user_id);
+        await api.post(`/bookings/${id}/rejections`, '', {
+            headers: {
+                user_id,
+            }
+        });
         setRequests(requests.filter(request => request._id !== id));
+    }
+    const handleExclude = async(spot) => {
+        await api.delete(`spots/${spot}/destroy`);
     }
     return (
         <>
@@ -68,6 +83,7 @@ export default function Dashboard() {
                         <header style={{ backgroundImage: `url(${spot.thumbnail_url})` }}/>
                         <strong>{spot.company}</strong>
                         <span>{spot.price ? `R$${spot.price}/dia` : `GRATUITO`}</span>
+                        <button className="exclude" onClick={() => handleExclude(spot._id)} >EXCLUIR</button>
                     </li>
                 ))}
             </ul>

@@ -1,12 +1,12 @@
 import React , { useState, useEffect }from 'react';
 import socketio from 'socket.io-client';
-import { Alert, View, AsyncStorage, Text, Image, ScrollView, StyleSheet, SafeAreaView } from 'react-native'
+import { Alert, View, AsyncStorage, Text, Image, ScrollView, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native'
 
 import logo from '../assets/logo.png';
 
 import SpotList from '../components/SpotList';
 
-export default function List() {
+export default function List( { navigation } ) {
   
   const [techs, setTechs] = useState([]);
 
@@ -28,9 +28,17 @@ export default function List() {
       })
     });
   }, []);
+
+  const handleLogOut = () => {
+    navigation.navigate('Login');
+    AsyncStorage.clear('user');
+  }
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.logo} source={logo}/>
+      <TouchableOpacity style={styles.logout} onPress={handleLogOut}>
+        <Text style={styles.logoutText}>SAIR</Text>
+      </TouchableOpacity>
       <ScrollView style={styles.scroll}>
         {techs.map(tech => <SpotList key={tech} tech={tech} />)}
       </ScrollView>
@@ -46,10 +54,21 @@ const styles = StyleSheet.create({
     height: 32,
     resizeMode: 'contain',
     alignSelf: 'center',
-    marginTop: 45,
+    marginTop: 40,
     
   },
   scroll:{
     marginVertical: 10 
+  },
+  logout: {
+    alignSelf: "flex-end",
+    marginHorizontal: 17,
+    marginTop: 7, 
+  },
+  logoutText: {
+    color: '#FF1F1F',
+    fontSize: 15,
+    
   }
+
 });

@@ -19,8 +19,6 @@ Com o término do curso, esse projeto será utilizado como objeto direto de estu
 - [ ] Buscar IP da máquina automaticamente
 
 
-
-
 ### COMPONENTES
 - Node JS
 - React 

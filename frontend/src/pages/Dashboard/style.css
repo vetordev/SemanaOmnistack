@@ -54,3 +54,15 @@ ul.notifications li button.accept{
 ul.notifications li button.reject{
   color: #e55e5e;
 }
+ul.spot-list li button.exclude{
+  margin-right: 10px;
+  border: 0;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  background: #fff;
+  color: #e55e5e;
+  align-self: flex-end;
+  text-align: start;
+  font-size: 14px;
+}
