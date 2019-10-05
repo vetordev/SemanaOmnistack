@@ -9,7 +9,7 @@
 - [x] Front-end com React Native
 - [x] Funcionalidades Avançadas
 
-Com o término do curso, esse projeto será utilizado como objeto direto de estudo, ou seja, irei implementar novas funcionalidades. Elas ficarão em **UPDATES**
+Com o término do curso, esse projeto será utilizado como objeto direto de estudo, ou seja, irei implementar novas funcionalidades, elas ficarão em **UPDATES**
 
 ## UPDATES 
 - [ ] Deletar um Spot
