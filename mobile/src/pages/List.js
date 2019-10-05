@@ -1,5 +1,6 @@
 import React , { useState, useEffect }from 'react';
-import { View, AsyncStorage, Text, Image, ScrollView, StyleSheet, SafeAreaView } from 'react-native'
+import socketio from 'socket.io-client';
+import { Alert, View, AsyncStorage, Text, Image, ScrollView, StyleSheet, SafeAreaView } from 'react-native'
 
 import logo from '../assets/logo.png';
 
@@ -15,10 +16,22 @@ export default function List() {
       setTechs(techsArray);
     });
   }, []);
+
+  useEffect(() => {
+    AsyncStorage.getItem('user').then(user_id => {
+      const socket = socketio('http://192.168.42.102:3333', {
+        query: { user_id }
+      });
+
+      socket.on('booking_response', booking => {
+        Alert.alert(`Sua reserva em ${booking.spot.company} em ${booking.date} foi ${booking.approved ? 'APROVADA' : 'REJEITADA'}`)
+      })
+    });
+  }, []);
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.logo} source={logo}/>
-      <ScrollView>
+      <ScrollView style={styles.scroll}>
         {techs.map(tech => <SpotList key={tech} tech={tech} />)}
       </ScrollView>
     </SafeAreaView>
@@ -35,5 +48,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 45,
     
+  },
+  scroll:{
+    marginVertical: 10 
   }
 });

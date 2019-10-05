@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+
 import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, TextInput, AsyncStorage, Alert } from 'react-native'
 
 import api from '../services/api';
@@ -6,11 +7,13 @@ import api from '../services/api';
 export default function Booking({ navigation }) {
 
   const [date, setDate] = useState('');
+  const id = navigation.getParam('id');
 
   async function handleSubmit() {
+    
     const user_id = await AsyncStorage.getItem('user');
-
-    await api.post(`/spots/${user_id}/booking`, {
+    
+    await api.post(`/spots/${id}/booking`, {
       date
     }, {
       headers: { user_id }
@@ -19,13 +22,15 @@ export default function Booking({ navigation }) {
 
     navigation.navigate('List');
 
+    
+
   }
   function handleCancel(){
     navigation.navigate('List');
   }
   
 
-  const id = navigation.getParam('id');
+  
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.label}> DATA DE INTERESSE *</Text>
