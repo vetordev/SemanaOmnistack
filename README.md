@@ -12,7 +12,7 @@
 Com o término do curso, esse projeto será utilizado como objeto direto de estudo, ou seja, irei implementar novas funcionalidades, elas ficarão em **UPDATES**
 
 ## UPDATES 
-- [ ] Deletar um Spot
+- [x] Deletar um Spot
 - [ ] Logout de Session
 - [ ] Verificar se é o dono do spot a aceitar/rejeitar os bookings
 - [ ] Impedir que o approved mude de estado
