@@ -14,7 +14,7 @@ Com o término do curso, esse projeto será utilizado como objeto direto de estu
 ## UPDATES 
 - [x] Deletar um Spot
 - [ ] Logout de Session
-- [ ] Verificar se é o dono do spot a aceitar/rejeitar os bookings
+- [x] Verificar se é o dono do spot a aceitar/rejeitar os bookings
 - [ ] Impedir que o approved mude de estado
 - [ ] Buscar IP da máquina automaticamente
 
