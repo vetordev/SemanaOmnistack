@@ -1,7 +1,7 @@
 # SEMANA OMNISTACK
 
 ## PROJETO
-**Aircnc**
+**AirCnC**
 
 ## OBJETIVOS
 - [x] Back-end com node
