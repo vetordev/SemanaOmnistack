@@ -17,7 +17,7 @@ Com o término do curso, esse projeto será utilizado como objeto direto de estu
 - [x] Verificar se é o dono do spot a aceitar/rejeitar os bookings
 - [x] Impedir que o approved mude de estado
 - [ ] Buscar IP da máquina automaticamente
-
+- [ ] Tela com bookings pendentes
 
 ### COMPONENTES
 - Node JS
