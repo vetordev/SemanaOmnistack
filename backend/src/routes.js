@@ -8,6 +8,7 @@ const DashboardController = require('./controller/DashBoardController');
 const BookingController = require('./controller/BookingController');
 const ApprovalController = require('./controller/ApprovalController');
 const RejectionController = require('./controller/RejectionController');
+const BookingsUserController = require('./controller/BookingsUserController');
 
 const routes = express.Router();
 const upload = multer(uploadConfig);
@@ -22,6 +23,7 @@ routes.post('/spots/:spot_id/booking', BookingController.store);
 
 routes.post('/bookings/:booking_id/approvals', ApprovalController.store);
 routes.post('/bookings/:booking_id/rejections', RejectionController.store);
+routes.get('/bookings/:user_id/list', BookingsUserController.show);
 
 //Deletar spot
 routes.delete('/spots/:spot/destroy', SpotController.destroy);

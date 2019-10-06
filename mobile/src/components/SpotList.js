@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { withNavigation } from 'react-navigation';
 import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from 'react-native';
-
+import ip from '../config/ip';
 
 import api from '../services/api';
 // const spotlist = props =>
@@ -39,7 +39,7 @@ const SpotList = ({ tech, navigation }) => {
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
           <View style={styles.listItem}>
-            <Image style={styles.thumbnail} source={{ uri: item.thumbnail_url.replace('localhost', '192.168.42.102') }} />
+            <Image style={styles.thumbnail} source={{ uri: item.thumbnail_url.replace('localhost', ip) }} />
             <Text style={styles.company}>{item.company}</Text>
             <Text style={styles.price}> {item.price ? `R$${item.price}/dia` : 'GRATUITO'} </Text>
             <TouchableOpacity style={styles.button} onPress={() => handleNavigate(item._id)}>

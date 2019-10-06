@@ -36,6 +36,10 @@ module.exports = {
         await Spot.findByIdAndRemove(spot);
         
         return res.json({deleted : true});
+    },
+    async show(req, res){
+        
     }
+
 
 }

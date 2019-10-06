@@ -5,6 +5,8 @@ const cors = require('cors');
 
 const socketio = require('socket.io');
 const http = require('http');
+const ip = require('ip')
+
 
 const path = require('path');
 
@@ -24,7 +26,7 @@ io.on('connection', socket => {
 app.use((req, res, next) => {
     req.io = io;
     req.connectedUsers = connectedUsers;
-
+    req.ip = ip.address();
     return next();
 });
 

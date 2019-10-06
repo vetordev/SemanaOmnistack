@@ -1,7 +1,9 @@
 import axios from 'axios';
+import socketio from 'socket.io-client';
+import ip from '../config/ip';
 
 const api = axios.create({
-  baseURL: 'http://192.168.42.102:3333',
+  baseURL: `http://${ip}:3333`,
 });
 
 export default api;

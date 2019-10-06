@@ -22,7 +22,6 @@ export default function Booking({ navigation }) {
 
     navigation.navigate('List');
 
-    
 
   }
   function handleCancel(){

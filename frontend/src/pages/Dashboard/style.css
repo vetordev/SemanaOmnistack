@@ -54,15 +54,27 @@ ul.notifications li button.accept{
 ul.notifications li button.reject{
   color: #e55e5e;
 }
-ul.spot-list li button.exclude{
+div.bookings-link {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+button.exclude {
+  margin-top: 10px;
+  align-self: flex-end;
   margin-right: 10px;
+}
+button.simple{
   border: 0;
   font-weight: bold;
-  margin-top: 10px;
   cursor: pointer;
   background: #fff;
   color: #e55e5e;
-  align-self: flex-end;
-  text-align: start;
   font-size: 14px;
+}
+button.bookings{
+  
+  font-size: 15px;
+  
 }

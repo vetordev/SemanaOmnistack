@@ -22,6 +22,11 @@ module.exports = {
         }
         
         return res.json(booking);
+    },
+    async show(req, res){
+        const { user_id } = req.params;
+    
+        const spots = await Spot.find({ user : user_id });
     }
 
 };

@@ -5,6 +5,7 @@ import { Alert, View, AsyncStorage, Text, Image, ScrollView, StyleSheet, SafeAre
 import logo from '../assets/logo.png';
 
 import SpotList from '../components/SpotList';
+import ip from '../config/ip';
 
 export default function List( { navigation } ) {
   
@@ -18,8 +19,9 @@ export default function List( { navigation } ) {
   }, []);
 
   useEffect(() => {
+    
     AsyncStorage.getItem('user').then(user_id => {
-      const socket = socketio('http://192.168.42.102:3333', {
+      const socket = socketio(`http://${ip}:3333`, {
         query: { user_id }
       });
 
